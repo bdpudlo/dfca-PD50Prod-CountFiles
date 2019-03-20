@@ -3,14 +3,13 @@ $message = @"
 Some stuff that is meaningful  
  
 Thank you, 
-IT Department 
-Cotendo Corporation 
-it@cotendo.com 
+Bryan 
+
 "@  
 
 
 $emailFrom = "noreply@doosan.com" 
-$subject="Test Email" 
+$subject="Test Email from powershell" 
 $smtpserver="smtprelay.corp.doosan.com" 
 $smtp=new-object Net.Mail.SmtpClient($smtpServer) 
-$smtp.Send($emailFrom, "bryan.pudlo@doosan.com", $subject, $message) 
+$smtp.Send($emailFrom, "shanthala.kumar@doosan.com", $subject, $message) 
