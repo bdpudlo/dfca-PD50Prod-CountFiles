@@ -64,7 +64,7 @@ function Create_Email_Body {
         #$message = "Same Number of items in script"
         $message += "Hello Please find attached the Weekely reports for the data folders for PD50Prod Test Data" + [System.Environment]::NewLine + [System.Environment]::NewLine
         for ($i = 0; $i -lt $Filesperfolder.Count; $i++) {
-            $message += "There are " + $FilesPerFolder[$i] + " in folder" + $Folders[$i] + " That are older than " + $NumberofDays + " days." + [System.Environment]::NewLine
+            $message += "There are " + $FilesPerFolder[$i] + " files in folder" + $Folders[$i] + " that are older than " + $NumberofDays + " days." + [System.Environment]::NewLine
         }
 
 
@@ -86,7 +86,7 @@ function Simple_Email {
     $emailFrom = "noreply@doosan.com" 
     $subject="PD50Test Data files not verified" 
     $smtpserver="smtprelay.corp.doosan.com" 
-    $emailto = @("bryan.pudlo@doosan.com",  "DLDBT999990123@doosan.com")
+    $emailto = "DLDBT999990123@Doosan.mail.onmicrosoft.com" #"DLDBT999990123@doosan.com"
     $smtp=new-object Net.Mail.SmtpClient($smtpServer) 
     $smtp.Send($emailFrom, $emailto, $subject, $message) 
 }
